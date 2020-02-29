@@ -1,14 +1,11 @@
-//var pjson = require('./package.json');
 const path = require('path');
-var fs = require('fs');
-
-var stat = fs.stat;
-
+const fs = require('fs');
+const stat = fs.stat;
 const root = process.cwd();
 const pjson = require(path.join(root, 'package.json'));
-var assetBundler = pjson.assetBundler;
+const assetBundler = pjson.assetBundler;
 
-exports.bundleAssets = function() {
+module.exports = function() {
     if(assetBundler && assetBundler.bundles) {
         if(assetBundler.bundles.length > 0) {
             assetBundler.bundles.forEach(function(bundle, idx) {
