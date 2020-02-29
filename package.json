@@ -1,0 +1,25 @@
+{
+  "name": "assetbundler",
+  "version": "1.0.0",
+  "description": "combines files into a more efficient production asset structure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikejouwstra/assetbundler.git"
+  },
+  "keywords": [
+    "easy",
+    "asset",
+    "vendor",
+    "bundler"
+  ],
+  "author": "Mike Jouwstra",
+  "license": "SEE LICENSE IN 'LICENSE'",
+  "bugs": {
+    "url": "https://github.com/mikejouwstra/assetbundler/issues"
+  },
+  "homepage": "https://github.com/mikejouwstra/assetbundler#readme"
+}
