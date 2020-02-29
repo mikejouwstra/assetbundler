@@ -3,12 +3,11 @@ const fs = require('fs');
 const stat = fs.stat;
 const root = process.cwd();
 const pjson = require(path.join(root, 'package.json'));
-const assetBundler = pjson.assetBundler;
 
 module.exports = function() {
-    if(assetBundler && assetBundler.bundles) {
-        if(assetBundler.bundles.length > 0) {
-            assetBundler.bundles.forEach(function(bundle, idx) {
+    if(pjson.assetBundler && pjson.assetBundler.bundles) {
+        if(pjson.assetBundler.bundles.length > 0) {
+            pjson.assetBundler.bundles.forEach(function(bundle, idx) {
                 var outputFile = bundle.output;
                 fs.writeFile(outputFile,"",function(err, result) {
                     if (err) throw err;
