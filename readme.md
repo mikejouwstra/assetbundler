@@ -39,3 +39,11 @@ This is a sample snippet which belongs in your package.json file:
     ]
 }
 ```
+
+create a npm run script with the following in your package.json:
+
+```
+"scripts": {
+    "easyassetbundler": "node node_modules/easyassetbundler/cli.js"
+}
+```

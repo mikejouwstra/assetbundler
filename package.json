@@ -1,6 +1,6 @@
 {
   "name": "easyassetbundler",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "combines files into a more efficient production asset structure.",
   "main": "index.js",
   "scripts": {
