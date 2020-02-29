@@ -1,7 +1,11 @@
-var pjson = require('./package.json');
+//var pjson = require('./package.json');
+const path = require('path');
 var fs = require('fs');
 
 var stat = fs.stat;
+
+const root = process.cwd();
+const pjson = require(path.join(root, 'package.json'));
 var assetBundler = pjson.assetBundler;
 
 exports.bundleAssets = function() {
@@ -18,12 +22,13 @@ exports.bundleAssets = function() {
                         content += "\n";
                         fs.appendFile(outputFile, content, function(err, result) {
                             if(err) throw err;
+                            console.log(filepath + ' wrote to ' + outputFile);
                         });
                     });
                 });
             });
         }
+    } else {
+        console.log("assetBundler object not found in package.json, please refer to the readme for directions.");
     }
 }
-
-//exports.bundleAssets();
