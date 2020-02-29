@@ -3,7 +3,9 @@
 easy to use bundler of asset files.
 
 Set the shared path of your files in bundle.basePath.
+
 Define the order of builds within the bundle.files array.
+
 Define the path to combine your files into with the bundle.output property.
 
 This is a sample snippet which belongs in your package.json file:
