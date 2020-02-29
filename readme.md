@@ -1,11 +1,14 @@
-assetbundler - easy to use bundler of asset files.
-
-this is a sample snippet to add to your package.json file:
+#assetbundler
+---
+easy to use bundler of asset files.
 
 Define the order files are built within the vendorPaths config object.
 
 Define the file to combine your files into with assetBundler.output property.
 
+This is a sample snippet to add to your package.json file:
+
+```
 "assetBundler": {
     "vendorPaths": { 
         "angular": "angular.min.js",
@@ -14,3 +17,4 @@ Define the file to combine your files into with assetBundler.output property.
     },
     "output": "./public/js/vendor.js"
 }
+```
