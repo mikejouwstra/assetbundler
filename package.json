@@ -17,6 +17,7 @@
     "bundler"
   ],
   "author": "Mike Jouwstra",
+  "license": "GPL-3",
   "bugs": {
     "url": "https://github.com/mikejouwstra/assetbundler/issues"
   },
