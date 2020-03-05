@@ -12,7 +12,12 @@ module.exports = function() {
                 fs.writeFile(outputFile,"",function(err, result) {
                     if (err) throw err;
                 });
-                bundle.files.forEach(function(filepath, x) {
+
+                compileContent(bundle.basePath, bundle.files, 0, outputFile);
+
+                /*for(var i = 0; i < bundle.files.length; i++) {
+                    filepath = bundle.files[i];
+
                     fs.readFile(bundle.basePath + filepath, (err, content) => {
                         if(err) throw err;
                         content += "\n";
@@ -21,10 +26,26 @@ module.exports = function() {
                             console.log(filepath + ' wrote to ' + outputFile);
                         });
                     });
-                });
+                }*/
             });
         }
     } else {
         console.log("assetBundler object not found in package.json, please refer to the readme for directions.");
+    }
+}
+
+function compileContent(basepath, files, idx, outputFile) {
+    if(files[idx]) {
+        fs.readFile(basepath + files[idx], (err, content) => {
+            if(err) throw err;
+            content += "\n";
+            fs.appendFile(outputFile, content, function(err, result) {
+                if(err) throw err;
+                console.log(files[idx] + ' wrote to ' + outputFile);
+
+                idx++;
+                compileContent(basepath, files, idx, outputFile);
+            });
+        });
     }
 }
